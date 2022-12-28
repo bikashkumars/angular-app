@@ -2,7 +2,7 @@
     position: absolute;
     left: 0;
     height: 10px;
-    background: #5500AA;
+    background: #ffc107;
     animation: lineH 6s 1s infinite linear;
 }
 @keyframes lineH{
