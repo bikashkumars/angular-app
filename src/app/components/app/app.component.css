@@ -1,0 +1,18 @@
+#progressbar{
+    position: absolute;
+    left: 0;
+    height: 10px;
+    background: #5500AA;
+    animation: lineH 6s 1s infinite linear;
+}
+@keyframes lineH{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 95%;opacity: 0;
+    }
+}
+.boxheight {
+    height: 100%;
+}

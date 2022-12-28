@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators'
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeopleService {
+  apiBaseUrl = environment.starwarBackendUrl;
 
   constructor(private http: HttpClient) { }
-
-  apiURL = 'http://localhost:8080';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -18,9 +18,14 @@ export class PeopleService {
     }),
   };
 
-  search(q): Observable<any> {
+  search(q, nextUrl): Observable<any> {
+    let queryString = "q=" + q;
+    if(nextUrl != ""){
+      queryString = nextUrl;
+    }
+
     return this.http
-      .get<any>(this.apiURL + '/v1/people/search/?q='+q)
+      .get<any>(this.apiBaseUrl + '/v1/people/search/?' + queryString)
       .pipe(retry(1), catchError(this.handleError));
   }
 

@@ -12,9 +12,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Further improvement
 
-- Rest API endpoint is configured in all service layer. It should be configured from 1 config file
-- Pagination is not implemeneted
 - Offline is not implemented
+- Model file
 
 ## Production build
 
@@ -31,5 +30,5 @@ docker build -t frontend:1.0.0 .
 ## Helm Deployment
 
 ```shell
-helm install frontend.tar.gz -f values.yaml
+helm install frontend.tar.gz -f
 ```
