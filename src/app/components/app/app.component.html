@@ -31,7 +31,7 @@
   <h6 *ngIf="responseArr.length > 0">Records found <span class="badge badge-secondary">{{count}}</span></h6>
 
   <table class="table table-striped">
-    <ng-container *ngIf="category == 'film' && responseArr.length > 0">  
+    <ng-container *ngIf="category === 'film' && responseArr.length > 0">  
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -54,7 +54,7 @@
       </tbody>
     </ng-container>
 
-    <ng-container *ngIf="category == 'people' && responseArr.length > 0">  
+    <ng-container *ngIf="category === 'people' && responseArr.length > 0">  
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -76,7 +76,7 @@
     </ng-container>
 
 
-    <ng-container *ngIf="category == 'starship' && responseArr.length > 0">  
+    <ng-container *ngIf="category === 'starship' && responseArr.length > 0">  
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -100,7 +100,7 @@
     </ng-container>
 
 
-    <ng-container *ngIf="category == 'vehicle' && responseArr.length > 0">  
+    <ng-container *ngIf="category === 'vehicle' && responseArr.length > 0">  
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -123,7 +123,7 @@
       </tbody>
     </ng-container>
 
-    <ng-container *ngIf="category == 'specie' && responseArr.length > 0">  
+    <ng-container *ngIf="category === 'specie' && responseArr.length > 0">  
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -146,7 +146,7 @@
       </tbody>
     </ng-container>
 
-    <ng-container *ngIf="category == 'planet' && responseArr.length > 0">  
+    <ng-container *ngIf="category === 'planet' && responseArr.length > 0">  
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -170,7 +170,7 @@
     </ng-container>
   </table>
 
-  <div class="container" *ngIf="loadNextLink != '' && loadNextLink != 'null'">
+  <div class="container" *ngIf="loadNextLink !== '' && loadNextLink != 'null'">
     <div class="row">
       <div class="col text-center">
         <button class="btn btn-outline-info mx-auto d-block" (click)="searchData()" [disabled]= "loading == true || this.loadNextLink == '' ||  this.loadNextLink == 'null' ">Load more Data</button>
@@ -178,7 +178,7 @@
     </div>
   </div>
 
-  <div class="container mx-auto p-3" *ngIf="loading == true">
+  <div class="container mx-auto p-3" *ngIf="loading === true">
     <div id="progressbar"></div>
   </div>
 

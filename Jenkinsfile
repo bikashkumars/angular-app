@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent "nodejs-angular-base-image-ci:latest"
 
     stages {
         stage('Build') {
@@ -10,7 +10,12 @@ pipeline {
         }
         stage('Quality Check') {
             steps {
-                echo 'SonarCommand Goes here'
+                echo 'ng list'
+            }
+        }
+        stage('Quality Check') {
+            steps {
+                echo 'npm run sonar-scanner'
             }
         }
         stage('Container') {

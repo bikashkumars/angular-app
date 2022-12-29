@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 
 import { FilmService } from '../../services/film.service';
 import { PeopleService } from '../../services/people.service';
@@ -9,7 +9,7 @@ import { VehicleService } from '../../services/vehicle.service';
 
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',

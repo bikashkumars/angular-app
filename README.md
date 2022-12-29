@@ -78,6 +78,7 @@ Following is the architecture of Angular Apps
 
 ![Angular Architecture](https://angular.io/generated/images/guide/architecture/overview2.png)
 
+For code quality control ESLint has been used for quality checking.
 
 ## Development server
 
@@ -130,8 +131,13 @@ docker build -t frontend:1.0.0 .
 
 ## Helm Deployment
 
+We are using Helm version 3
+
 ```shell
-helm install frontend.tar.gz -f
+helm install frontend frontend/ --values frontend/values.yaml
+
+//Or first create the tar file of helm/frontend folder and install
+helm install frontend.tar.gz --values frontend/values.yaml
 ```
 
 ## Deployment Configuration
